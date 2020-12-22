@@ -1,0 +1,173 @@
+{
+   "emails":[
+      {
+         "from":"aaa@example.com",
+         "to":[
+            "zzz.zzz@example.com"
+         ],
+         "subject":"[ HR-888 ] Notice of official announcement",
+         "body":"sample body",
+         "time":"1608452664000",
+         "replies":[
+
+         ],
+         "attachments":[
+
+         ]
+      },
+      {
+         "from":"bbb.bbbb@example.com",
+         "to":[
+            "yyy@example.com"
+         ],
+         "subject":"[web:333] 'Web Contact'",
+         "body":"sample body",
+         "time":"1577923800000",
+         "replies":[
+
+         ],
+         "attachments":[
+
+         ]
+      },
+      {
+         "from":"ccc@example.com",
+         "to":[
+            "xxx@example.com",
+            "zzz.zzz@example.com"
+         ],
+         "subject":"Happy New Year! Greetings for the New Year",
+         "body":"sample body",
+         "time":"1577923200000",
+         "replies":[
+
+         ],
+         "attachments":[
+            "https://dummyimage.com/600x400/ffffff/fff.jpg"
+         ]
+      },
+      {
+         "from":"ddd.dddd@example.com",
+         "to":[
+            "vvv.vvv@example.com",
+            "zzz.zzz@example.com"
+         ],
+         "subject":"[HR-887(Revised: Office Expansion Project Team)] Notice of off...",
+         "body":"sample body",
+         "time":"1577919600000",
+         "replies":[
+
+         ],
+         "attachments":[
+
+         ]
+      },
+      {
+         "from":"eee@example.com",
+         "to":[
+            "sss@example.com",
+            "zzz.zzz@example.com",
+            "vvv.vvv@example.com"
+         ],
+         "subject":"[Github] Logout page",
+         "body":"sample body",
+         "time":"1577912400000",
+         "replies":[
+
+         ],
+         "attachments":[
+
+         ]
+      },
+      {
+         "from":"fff.ffff@example.com",
+         "to":[
+            "qqq.qqq@example.com"
+         ],
+         "subject":"［dev］ Postfix 3.1.12 / 3.2.9 / 3.3.4 / 3.4.5",
+         "body":"sample body",
+         "time":"1577905200000",
+         "replies":[
+
+         ],
+         "attachments":[
+
+         ]
+      },
+      {
+         "from":"ggg@example.com",
+         "to":[
+            "ppp@example.com"
+         ],
+         "subject":"Re: [Github] Brush-up on loading animation",
+         "body":"sample body",
+         "time":"1577898000000",
+         "replies":[
+
+         ],
+         "attachments":[
+
+         ]
+      },
+      {
+         "from":"hhh.hhh@example.com",
+         "to":[
+            "ooo.ooo@example.com"
+         ],
+         "subject":"Workplace Summary for sample, Inc.: Jun 2 - Jun 9",
+         "body":"sample body",
+         "time":"1577887200000",
+         "replies":[
+
+         ],
+         "attachments":[
+            "https://dummyimage.com/600x400/ffffff/fff.jpg"
+         ]
+      },
+      {
+         "from":"iii@example.com",
+         "to":[
+            "nnn@example.com"
+         ],
+         "subject":"I love you",
+         "body":"sample body",
+         "time":"1577800800000",
+         "replies":[
+
+         ],
+         "attachments":[
+            "https://dummyimage.com/600x400/ffffff/fff.jpg"
+         ]
+      },
+      {
+         "from":"pablo-Diego-José-Francisco@example.com",
+         "to":[
+            "pablo-Diego-José-Francisco@example.com"
+         ],
+         "subject":"[info:888] ABC EQUIPMENT COMPANY",
+         "body":"sample body",
+         "time":"1577782800000",
+         "replies":[
+
+         ],
+         "attachments":[
+
+         ]
+      },
+      {
+         "from":"skjdfh@example.com",
+         "to":[
+            "skjdfhFrancisco@example.com"
+         ],
+         "subject":"[just let you know] just an sample",
+         "body":"sample body",
+         "time":"1571557981000",
+         "replies":[
+
+         ],
+         "attachments":[
+
+         ]
+      }
+   ]
+}
