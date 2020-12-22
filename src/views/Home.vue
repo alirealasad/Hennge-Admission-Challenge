@@ -37,7 +37,9 @@
   <sorted-table :values="filtered" class="collection collection-container" @sort-table="onSortTable">
       <div class="item item-container">
           <div class="attribute mail-icon"></div>
-          <div class="attribute from"><sort-link name="from">From </sort-link></div>
+          <div class="attribute from">
+            <sort-link name="from"> From </sort-link>
+          </div>
           <div class="attribute to"><sort-link name="to">To </sort-link></div>
           <div class="attribute badger"></div>
           <div class="attribute subject"><sort-link name="subject">Subject </sort-link></div>
@@ -46,37 +48,33 @@
         </div>
     <template #body="sort">
       <!-- <router-link :to="{ name: '', params: {} }"></router-link> -->
-      <!-- <mails :values="sort.values" /> -->
-      <div class="item item-container" v-for="value in sort.values" :key="value.subject">
+      <router-link :to="{ name: '', params: {} }" class="item item-container" v-for="value in sort.values" :key="value.subject">
           <div class="attribute mail-icon">
             <img src="@/assets/svg/icon_mail_sp.svg" height="50px" width="18px" alt="">
           </div>
-          <div class="attribute from">
-            <p class="font-weight-bold" v-if="isActive('from')"> {{ value.from }} </p>
-            <p v-else>{{ value.from }}</p></div>
-          <div class="attribute to">
-            <p class="font-weight-bold" v-if="isActive('to')"> {{ value.to.join(", ") }} </p>
-            <p v-else>{{ value.to.join(", ") }}</p>
+          <div class="attribute from" :class="{'font-weight-bold':isActive('from')}">
+              {{ value.from }}
+          </div>
+          <div class="attribute to" :class="{'font-weight-bold':isActive('to')}">
+              {{ value.to.join(", ") }}
           </div>
           <div class="attribute badger">
             <span class="badge badge-secondary" v-if="value.to.length > 1">+{{value.to.length-1}}</span>
           </div>
-          <div class="attribute subject">
-            <p class="font-weight-bold" v-if="isActive('subject')"> {{ value.subject }} </p>
-            <p v-else>{{ value.subject }}</p>
+          <div class="attribute subject" :class="{'font-weight-bold':isActive('subject')}">
+              {{ value.subject }}
           </div>
           <div class="attribute attactments">
             <span v-if="value.attachments.length !== 0">
               <img src="@/assets/svg/icon_clip.svg" height="16px" alt=""></span>
             </div>
-          <div class="attribute time">
-            <p class="font-weight-bold" v-if="isActive('time')"> {{ value.time | date }} </p>
-            <p v-else>{{ value.time | date  }}</p>
+          <div class="attribute time" :class="{'font-weight-bold':isActive('time')}">
+            {{ value.time | date  }}
           </div>
           <div class="attribute arrow">
             <img src="@/assets/svg/icon_arrow02.svg?data" height="10px" alt="">
           </div>
-      </div>
+      </router-link>
     </template>
   </sorted-table>
 </div>

@@ -54,6 +54,11 @@ a {
   border-bottom: 2px solid #eaeaea;
 }
 
+.sort-link:hover{
+  color: #000000;
+}
+
+
 @media screen and (max-width: 736px) {
   .item-container {
     display: grid;
@@ -111,14 +116,14 @@ a {
      }
 
      .sort-link{
+       color: #575964;
        padding-right: 5px;
        border-right: 1px solid #000000;
      }
-
-
   .collection-container>.item-container:first-child> .attribute {
     grid-row: span 3;
     padding: 10px;
+    font-size: 13px;
   }
 
   .collection-container>.item-container:first-child> .from {
@@ -129,20 +134,19 @@ a {
   }
 
   .collection-container>.item-container:first-child> .to {
-      text-overflow: clip;
+    text-overflow: clip;
     grid-column: span 2;
     order: 2;
   }
 
   .collection-container>.item-container:first-child> .subject {
-      text-overflow: clip;
+    text-overflow: clip;
     grid-column: span 3;
     order: 3;
-    font-size: 14px;
   }
 
   .collection-container>.item-container:first-child> .time {
-      text-overflow: clip;
+    text-overflow: clip;
     grid-column: span 2;
     order: 4;
   }
@@ -158,6 +162,7 @@ a {
   .collection-container>.item-container:first-child> .mail-icon {
     display: none;
   }
+
   .collection-container>.item-container:first-child> .arrow {
     display: none;
   }

@@ -1,5 +1,5 @@
 <template>
-  <a href="#" class="sort-link" @click.prevent="sortBy(name)">
+  <a href="#" class="sort-link" :class="{'font-weight-bold':isActive(name)}" @click.prevent="sortBy(name)">
       <slot>{{ name }}</slot>
         <slot name="icon">
           <span v-if="isActive(name)">
