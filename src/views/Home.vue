@@ -6,16 +6,14 @@
     <div class="datepicker-trigger">
       <div class="input-group">
       <input
-        class="date_element"
+        class="date_element form-control"
         type="text"
         id="datepicker-trigger"
         placeholder="Select dates"
         :value="formatDates(dateOne, dateTwo)"
       >
-      <div class="input-group-btn">
-          <div class="btn-group" role="group">
-              <button type="button" class="btn theme-color search-button" @click="filteredList()"> <img src="@/assets/svg/icon_search.svg" height="20px" alt=""></button>
-          </div>
+      <div class="input-group-append">
+            <button type="button" class="btn theme-color" @click="filteredList()"> <img src="@/assets/svg/icon_search.svg" height="20px" alt=""></button>
       </div>
       </div>
       <AirbnbStyleDatepicker
@@ -47,8 +45,7 @@
           <div class="attribute time"><sort-link name="time">Date </sort-link></div>
         </div>
     <template #body="sort">
-      <!-- <router-link :to="{ name: '', params: {} }"></router-link> -->
-      <router-link :to="{ name: '', params: {} }" class="item item-container" v-for="value in sort.values" :key="value.subject">
+      <router-link class="item item-container" v-for="value in sort.values" :to="{ name: 'Mail', params: {id:value.id} }" :key="value.id">
           <div class="attribute mail-icon">
             <img src="@/assets/svg/icon_mail_sp.svg" height="50px" width="18px" alt="">
           </div>
@@ -154,18 +151,12 @@ created() {
     background-origin: content-box;
     background-size: 1.5rem 1.5rem;
     background-origin: border-box;
-    padding: 8px 50px 8px 50px;
+    padding: 0px 50px 0px 50px;
     border-radius:6px;
     border-width: thin;
 }
-::placeholder {
+.date_element > ::placeholder {
   padding-left: 30px;
-}
-
-.search-button{
-  margin-left: -50px;
-  margin-right: 50px;
-  margin-top: 2px;
 }
 
 .date_element>input[type="text"]{
@@ -174,6 +165,15 @@ created() {
 
 .logo{
   margin-top: 220px;
+}
+
+.input-group-append{
+  border-radius:6px;
+  border-width: bold;
+}
+
+.form-control{
+  max-width: 230px
 }
 
 

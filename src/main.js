@@ -6,7 +6,7 @@ import "@/assets/scss/style.scss"
 import router from './router'
 import SortedTablePlugin from "./plugins/plugins";
 import AirbnbStyleDatepicker from 'vue-airbnb-style-datepicker'
-import './registerServiceWorker'
+// import './registerServiceWorker'
 
 const datepickerOptions = {
   colors: {

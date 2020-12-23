@@ -2,11 +2,12 @@
    "emails":[
       {
          "from":"aaa@example.com",
+         "id":"5fe2f72c50195a6c1e5df0b2",
          "to":[
             "zzz.zzz@example.com"
          ],
          "subject":"[ HR-888 ] Notice of official announcement",
-         "body":"sample body",
+         "body":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
          "time":"1608452664000",
          "replies":[
 
@@ -17,6 +18,7 @@
       },
       {
          "from":"bbb.bbbb@example.com",
+         "id":"5fe2f73c06c1d37a2d66a9a3",
          "to":[
             "yyy@example.com"
          ],
@@ -32,6 +34,7 @@
       },
       {
          "from":"ccc@example.com",
+         "id":"5fe2f742dff535c28e77642f",
          "to":[
             "xxx@example.com",
             "zzz.zzz@example.com"
@@ -48,6 +51,7 @@
       },
       {
          "from":"ddd.dddd@example.com",
+         "id":"5fe2f747ef672457105473e1",
          "to":[
             "vvv.vvv@example.com",
             "zzz.zzz@example.com"
@@ -64,6 +68,7 @@
       },
       {
          "from":"eee@example.com",
+         "id":"5fe2f74d42a8e77ab36df089",
          "to":[
             "sss@example.com",
             "zzz.zzz@example.com",
@@ -81,6 +86,7 @@
       },
       {
          "from":"fff.ffff@example.com",
+         "id":"5fe2f7554b69657bad22bcb8",
          "to":[
             "qqq.qqq@example.com"
          ],
@@ -96,6 +102,7 @@
       },
       {
          "from":"ggg@example.com",
+         "id":"5fe2f762cc33e9a7ab1baf81",
          "to":[
             "ppp@example.com"
          ],
@@ -111,6 +118,7 @@
       },
       {
          "from":"hhh.hhh@example.com",
+         "id":"5fe2f767a2fa6ab043f9f184",
          "to":[
             "ooo.ooo@example.com"
          ],
@@ -126,11 +134,12 @@
       },
       {
          "from":"iii@example.com",
+         "id":"5fe306a77fa95d8dc0bbfac7",
          "to":[
             "nnn@example.com"
          ],
          "subject":"I love you",
-         "body":"sample body",
+         "body":"好きだよ",
          "time":"1577800800000",
          "replies":[
 
@@ -141,11 +150,12 @@
       },
       {
          "from":"pablo-Diego-José-Francisco@example.com",
+         "id":"5fe306b91356419b5b81909b",
          "to":[
             "pablo-Diego-José-Francisco@example.com"
          ],
          "subject":"[info:888] ABC EQUIPMENT COMPANY",
-         "body":"sample body",
+         "body":"sample bofdy",
          "time":"1577782800000",
          "replies":[
 
@@ -156,6 +166,7 @@
       },
       {
          "from":"skjdfh@example.com",
+         "id":"5fe306c85bc8dd76235894ba",
          "to":[
             "skjdfhFrancisco@example.com"
          ],
