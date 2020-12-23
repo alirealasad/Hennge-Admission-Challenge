@@ -151,7 +151,7 @@ created() {
     background-origin: content-box;
     background-size: 1.5rem 1.5rem;
     background-origin: border-box;
-    padding: 0px 50px 0px 50px;
+    padding: 0px 0px 0px 50px;
     border-radius:6px;
     border-width: thin;
 }
@@ -173,7 +173,7 @@ created() {
 }
 
 .form-control{
-  max-width: 230px
+  max-width: 235px
 }
 
 
