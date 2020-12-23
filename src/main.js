@@ -4,7 +4,7 @@ import "bootstrap/scss/bootstrap.scss";
 import 'vue-airbnb-style-datepicker/dist/vue-airbnb-style-datepicker.min.css'
 import "@/assets/scss/style.scss"
 import router from './router'
-import SortedTablePlugin from "./plugins/plugins";
+import Plugin from "./plugins/plugins";
 import AirbnbStyleDatepicker from 'vue-airbnb-style-datepicker'
 // import './registerServiceWorker'
 
@@ -26,7 +26,7 @@ texts: {
 
 
 Vue.use(AirbnbStyleDatepicker, datepickerOptions)
-Vue.use(SortedTablePlugin);
+Vue.use(Plugin);
 
 Vue.config.productionTip = false
 

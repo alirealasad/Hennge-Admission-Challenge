@@ -3,30 +3,17 @@
     <br>
     <div class="row">
         <div class="col-md-10">
-    <div class="datepicker-trigger">
-      <div class="input-group">
-      <input
-        class="date_element form-control"
-        type="text"
-        id="datepicker-trigger"
-        placeholder="Select dates"
-        :value="formatDates(dateOne, dateTwo)"
-      >
-      <div class="input-group-append">
-            <button type="button" class="btn theme-color" @click="filteredList()"> <img src="@/assets/svg/icon_search.svg" height="20px" alt=""></button>
-      </div>
-      </div>
-      <AirbnbStyleDatepicker
-        :trigger-element-id="'datepicker-trigger'"
-        :mode="'range'"
-        :fullscreen-mobile="true"
-        :date-one="dateOne"
-        :date-two="dateTwo"
-        @date-one-selected="val => { dateOne = val }"
-        @date-two-selected="val => { dateTwo = val }"
-        :showShortcutsMenuTrigger="false"
-      />
-    </div>
+          <div class="input-group">
+  <input type="text" class="form-control search" v-model="search.term" placeholder="Search Mail" aria-label="Recipient's username" aria-describedby="basic-addon2">
+  <div class="input-group-append">
+    <div class="dropdown">
+<button class="btn dropdown-toggle theme-color" @click="modals.classic = true" type="button">
+</button>
+</div>
+    <button type="button" class="btn theme-color" @click="filteredList()"> <img src="@/assets/svg/icon_search.svg" height="20px" alt=""></button>
+  </div>
+</div>
+
           </div>
         </div>
           <br>
@@ -85,6 +72,48 @@
     </div>
 </div>
 </div>
+<modal :show.sync="modals.classic" headerClasses="justify-content-center">
+  <div class="form-group">
+      <label for="contain">From</label>
+      <input v-model="search.from" class="form-control" type="text" />
+    </div>
+    <div class="form-group">
+      <label for="contain">To</label>
+      <input v-model="search.to" class="form-control" type="text" />
+    </div>
+    <div class="form-group">
+      <label for="contain">has the words</label>
+      <input v-model="search.term" class="form-control" type="text" />
+    </div>
+    <div class="form-group">
+      <label for="contain">Time</label>
+      <div class="datepicker-trigger">
+        <div class="input-group">
+        <input
+          class="date_element form-control"
+          type="text"
+          id="datepicker-trigger"
+          placeholder="Select dates"
+          :value="formatDates(dateOne, dateTwo)"
+        >
+        </div>
+        <AirbnbStyleDatepicker
+          :trigger-element-id="'datepicker-trigger'"
+          :mode="'range'"
+          :fullscreen-mobile="true"
+          :date-one="dateOne"
+          :date-two="dateTwo"
+          @date-one-selected="val => { dateOne = val }"
+          @date-two-selected="val => { dateTwo = val }"
+          :showShortcutsMenuTrigger="false"
+        />
+      </div>
+    </div>
+<template slot="footer">
+<button type="button" class="btn theme-color" @click="modals.classic = false"> Close</button>
+<button type="button" class="btn theme-color" @click="filteredList()">Search</button>
+</template>
+</modal>
   </div>
 </template>
 
@@ -92,9 +121,13 @@
 import db from "../db.json";
 import format from 'date-fns/format';
 import moment from "moment";
+import Modal from '@/components/Modal.vue';
 
 export default {
   name: 'Home',
+  components:{
+      Modal
+  },
   methods: {
   onSortTable(currentSort, currentDir){
     this.currentSort = currentSort;
@@ -110,19 +143,40 @@ export default {
     }
     return formattedDates
   },
-  dateFilter(email){
-    return parseInt(moment(this.dateOne, this.dateFormat).unix())*1000 < parseInt(email.time) && parseInt(moment(this.dateTwo, this.dateFormat).unix())*1000 > parseInt(email.time);
-  },
   isActive(feild){
     return this.currentSort === feild;
   },
+  fromFilter(email){
+    if (this.search.from !== "") {
+      return email.from === this.search.from;
+    }
+    return true;
+  },
+  toFilter(email){
+    if (this.search.to !== "") {
+      return email.to.includes(this.search.to);
+    }
+    return true;
+  },
+  dateFilter(email){
+    if (this.dateOne !== "" && this.dateTwo !== "") {
+      return parseInt(moment(this.dateOne, this.dateFormat).unix())*1000 <= parseInt(email.time) && parseInt(moment(this.dateTwo, this.dateFormat).unix())*1000 >= parseInt(email.time);
+    }
+    return true;
+  },
+  termFilter(email){
+    if (this.search.term !== "") {
+      return email.subject.toLowerCase().match(this.search.term.toLowerCase())||email.body.toLowerCase().match(this.search.term.toLowerCase());
+    }
+    return true;
+  },
   filteredList(){
     this.filtered = this.values.filter(email => {
-      if (this.dateOne !== "" && this.dateTwo !== "") {
-          return this.dateFilter(email);
-        }
-        return true;
+      return this.dateFilter(email) && this.termFilter(email) && this.toFilter(email) && this.fromFilter(email);
     })
+    if (this.modals.classic) {
+      this.modals.classic = false;
+    }
   }
 },
 created() {
@@ -136,7 +190,15 @@ created() {
       dateTwo: '',
       currentSort: '',
       currentDir: '',
-      filtered:[]
+      filtered:[],
+      search:{
+        from:'',
+        to:'',
+        term:''
+      },
+      modals: {
+     classic: false,
+ },
   }
 }
 }
@@ -159,6 +221,10 @@ created() {
   padding-left: 30px;
 }
 
+.search{
+  max-width: 235px
+}
+
 .date_element>input[type="text"]{
   padding-left: 30px;
 }
@@ -173,8 +239,11 @@ created() {
 }
 
 .form-control{
-  max-width: 235px
+
 }
 
-
+.show>.dropdown-menu {
+  left: 50%;
+  transform: translateX(-50%);
+}
 </style>

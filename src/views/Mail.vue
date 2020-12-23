@@ -3,10 +3,11 @@
   <div class="col-md-10">
     <h2>{{getEmail.subject}}</h2>
     <h5>From: {{getEmail.from }}</h5>
-    <h5>to: {{getEmail.to.join(', ') }}</h5>
+    <h5>To: {{getEmail.to.join(', ') }}</h5>
     <h6 class="font-weight-bold">{{getEmail.time | date}}</h6>
     <hr>
     <p>{{getEmail.body}}</p>
+    <img :src="attachment" alt="..." class="img-thumbnail" v-for="attachment in getEmail.attachments" :key="attachment">
   </div>
 </div>
 </template>

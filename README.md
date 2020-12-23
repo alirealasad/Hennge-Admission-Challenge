@@ -1,4 +1,4 @@
-# hennge
+# Henge
 
 ## Project setup
 ```
