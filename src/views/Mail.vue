@@ -1,6 +1,5 @@
 <template>
-<div class="container">
-  <div class="col-md-10">
+<div class="container col-md-10">
     <h2>{{getEmail.subject}}</h2>
     <h5>From: {{getEmail.from }}</h5>
     <h5>To: {{getEmail.to.join(', ') }}</h5>
@@ -8,7 +7,6 @@
     <hr>
     <p>{{getEmail.body}}</p>
     <img :src="attachment" alt="..." class="img-thumbnail" v-for="attachment in getEmail.attachments" :key="attachment">
-  </div>
 </div>
 </template>
 
@@ -26,7 +24,7 @@ export default {
     return {
       values: db.emails
     }
-    }
+}
 
 }
 </script>
